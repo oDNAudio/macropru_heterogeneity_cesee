@@ -371,7 +371,7 @@ save(IRF_shock_MPPI, IRFc_shock_MPPI,
      file = paste0(dirn, "irf_store.Rda"))
 
 # saving results for convergence checking etc
-if(grepl("baseline", dirn)) {
+if(grepl("baseline", dirn) & MPPI_slct == "MPPI") {
   save(run, file = paste0(dirn, "run_store.Rda"))
 }
 
