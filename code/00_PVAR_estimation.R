@@ -257,6 +257,7 @@ run <- PVAR(Yraw = Yraw, Wraw = Wraw, p = p, q = q, nsave = nsave, nburn = nburn
 
 # get main quantities needed for IRF computation
 coeffs <- list(alpha = run$store$alpha,
+               C0 = run$store$C0,
                A = run$store$A,
                SIGMA = run$store$S,
                p = run$args$p)

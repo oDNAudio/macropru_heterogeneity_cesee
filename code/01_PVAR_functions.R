@@ -396,10 +396,12 @@ compute_irf <- function(rf.coeff, nhor){
   p <- rf.coeff$p
   M <- dim(rf.coeff$A)[3]
   
+  # group-wide parameters
   A          <-rf.coeff$alpha[,1:(M*p),]
+  C0         <-rf.coeff$C0
+  # country-specific parameters
   A.c        <-rf.coeff$A[,1:(M*p),,]
   SIGMA      <-rf.coeff$SIGMA
-  SIGMA_mean <-apply(SIGMA,c(1,2,3),mean) # take the mean SIGMA over the countries
 
   nsave      <- dim(A)[1]
   K          <- dim(A)[2]
@@ -418,7 +420,7 @@ compute_irf <- function(rf.coeff, nhor){
   for(irep in 1:nsave){
     ### regional (mean) responses
     temp <- comp_irf(A=A[irep,,],
-                     SIGMA=SIGMA_mean[irep,,], nhor = nhor)
+                     SIGMA=C0[irep,,], nhor = nhor)
     IRF_store[irep,,,]  <- temp$impresp
     
     ### CC-Responses
