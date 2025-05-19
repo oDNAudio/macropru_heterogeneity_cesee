@@ -41,13 +41,13 @@ table_FEVD[3,1] <- "CAP inflows"
 table_FEVD[5,1] <- "OI inflows"
 
 table_FEVD[1, 2:6] <- cred_med
-table_FEVD[2, 2:6] <- paste0("[", cred_lo, " - ", cred_hi, "]")
+table_FEVD[2, 2:6] <- paste0("[", cred_lo, "-", cred_hi, "]")
   
 table_FEVD[3, 2:6] <- cap_med
-table_FEVD[4, 2:6] <- paste0("[", cap_lo, " - ", cap_hi, "]")
+table_FEVD[4, 2:6] <- paste0("[", cap_lo, "-", cap_hi, "]")
 
 table_FEVD[5, 2:6] <- oi_med
-table_FEVD[6, 2:6] <- paste0("[", oi_lo, " - ", oi_hi, "]")
+table_FEVD[6, 2:6] <- paste0("[", oi_lo, "-", oi_hi, "]")
 
 colnames(table_FEVD) <- c("Horizon", "1-year", "2-year", "3-year", "4-year", "5-year")
 

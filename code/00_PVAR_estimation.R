@@ -17,7 +17,7 @@ library(matrixcalc)
 
 # Load functions  ---------------------------------------------------------
 
-source("./code/02_PVAR_functions.R")
+source("./code/01_PVAR_functions.R")
 
 
 # Settings ----------------------------------------------------------------
@@ -370,6 +370,7 @@ if(MPP_act == 0 & prepost == 0 & ordering == 0 &
 save(IRF_shock_MPPI, IRFc_shock_MPPI,
      FEVD_common, FEVD_c,
      file = paste0(dirn, "irf_store.Rda"))
+
 
 # saving results for convergence checking etc
 if(grepl("baseline", dirn) & MPPI_slct == "MPPI") {
